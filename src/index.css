@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-[#020617] text-[#f8fafc];
+  }
+}
+
+@layer components {
+  .mono {
+    @apply font-mono;
+  }
+
+  .glass-card {
+    @apply bg-[#0f172a] border border-[#1e293b] transition-all duration-200;
+  }
+
+  .achievement-badge {
+    @apply bg-[rgba(16,185,129,0.1)] text-[#10b981] border border-[rgba(16,185,129,0.2)];
+  }
+
+  .project-card:hover {
+    @apply border-[#38bdf8];
+  }
+
+  .sidebar {
+    @apply w-[320px] border-r border-[#1e293b] hidden lg:flex;
+  }
+
+  .skill-tag {
+    @apply text-[0.7rem] bg-[#1e293b] px-2 py-0.5 rounded border border-[#334155] text-slate-300;
+  }
+}
