@@ -22,7 +22,8 @@ import {
 const PROJECTS = [
   {
     title: "Abbott Home Tuition Website",
-    github: "https://github.com/Amir-shah1/Abbott-home-tuition-website.git",
+    link: "http://98.91.250.177/index.html",
+    isLive: true,
     description: "Developed a robust and functional web platform for home tuition services, facilitating seamless tutor-student connections.",
     achievement: "Secured 2nd position in an inter-subject competition in Web Technologies.",
     tags: ["HTML", "CSS", "JS", "Responsive"],
@@ -30,7 +31,8 @@ const PROJECTS = [
   },
   {
     title: "WatchWise – Movie Recommendation System",
-    github: "https://github.com/Amir-shah1/Movie-Recommendation-System-WatchWise.git",
+    link: "https://github.com/Amir-shah1/Movie-Recommendation-System-WatchWise.git",
+    isLive: false,
     description: "Built an intelligent recommendation system that suggests movies based on collaborative filtering and user preferences.",
     achievement: "Secured 1st position in Artificial Intelligence.",
     tags: ["AI", "Python", "Data Analysis"],
@@ -38,7 +40,8 @@ const PROJECTS = [
   },
   {
     title: "Data Structure Visualizer",
-    github: "https://github.com/Amir-shah1/Data_Structure_Visualizer.git",
+    link: "https://github.com/Amir-shah1/Data_Structure_Visualizer.git",
+    isLive: false,
     description: "Created an interactive educational tool to demonstrate core data structures and their behavior through real-time visualization.",
     achievement: "Secured 3rd position in Data Structures.",
     tags: ["Java", "Algorithms", "Visualizer"],
@@ -206,12 +209,12 @@ export default function App() {
                     ))}
                   </div>
                   <a 
-                    href={project.github} 
+                    href={project.link} 
                     target="_blank" 
                     rel="noreferrer"
                     className="text-xs text-sky-400 font-bold hover:text-white transition-colors flex items-center gap-1"
                   >
-                    REPOSITORY <ChevronRight className="w-3 h-3" />
+                    {project.isLive ? "LIVE SITE" : "REPOSITORY"} {project.isLive ? <ExternalLink className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
                   </a>
                 </div>
               </motion.div>
